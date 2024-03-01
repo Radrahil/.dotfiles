@@ -85,3 +85,5 @@ eval "$(zoxide init zsh)"
 #Display Pokemon
 #pokemon-colorscripts --no-title -r 1,3,6
 eval "$(atuin init zsh)"
+
+export PATH="/home/rahil/.cargo/bin:$PATH"
