@@ -29,8 +29,8 @@ M.ui = {
 	},
 
 	statusline = {
-		theme = "default",
-		separator_style = "default",
+		theme = "minimal",
+		separator_style = "round",
 		-- overriden_modules = nil,
 	},
 }
