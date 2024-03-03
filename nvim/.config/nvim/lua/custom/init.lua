@@ -10,3 +10,5 @@ vim.g.maplocalleader = ","
 vim.opt.rnu = true
 
 vim.opt.conceallevel = 2
+
+vim.g.lua_snippets_path = vim.fn.stdpath("config") .. "/lua/custom/LuaSnips"

@@ -37,6 +37,17 @@ local plugins = {
 		},
 	},
 
+	{
+		"L3MON4D3/LuaSnip",
+		opts = {
+			-- Enable autotriggered snippets
+			enable_autosnippets = true,
+
+			-- Use Tab (or some other key if you prefer) to trigger visual selection
+			store_selection_keys = "<Tab>",
+		},
+	},
+
 	-- Install a plugin
 	{
 		"max397574/better-escape.nvim",
