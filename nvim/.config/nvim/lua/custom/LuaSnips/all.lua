@@ -16,4 +16,13 @@ return {
 	-- To return multiple snippets, use one `return` statement per snippet file
 	-- and return a table of Lua snippets.
 	s({ trig = "foo" }, { t("Another snippet.") }),
+
+	-- Example use of insert node placeholder text
+	s(
+		{ trig = "hr", dscr = "The hyperref package's href{}{} command (for url links)" },
+		fmta([[\href{<>}{<>}]], {
+			i(1, "url"),
+			i(2, "display name"),
+		})
+	),
 }

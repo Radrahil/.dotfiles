@@ -26,4 +26,12 @@ return {
 	s({ trig = ";g", snippetType = "autosnippet" }, {
 		t("\\gamma"),
 	}),
+
+	s(
+		{ trig = "ff", dscr = "LaTeX fraction" },
+		fmta([[\frac{<>}{<>}]], {
+			i(1, "numerator"),
+			i(2, "denominator"),
+		})
+	),
 }
