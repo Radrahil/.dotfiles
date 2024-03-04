@@ -16,14 +16,4 @@ return {
 	-- To return multiple snippets, use one `return` statement per snippet file
 	-- and return a table of Lua snippets.
 	s({ trig = "foo" }, { t("Another snippet.") }),
-
-	s({ trig = ";a", snippetType = "autosnippet" }, {
-		t("\\alpha"),
-	}),
-	s({ trig = ";b", snippetType = "autosnippet" }, {
-		t("\\beta"),
-	}),
-	s({ trig = ";g", snippetType = "autosnippet" }, {
-		t("\\gamma"),
-	}),
 }
