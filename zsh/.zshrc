@@ -87,3 +87,4 @@ eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
 
 export PATH="/home/rahil/.cargo/bin:$PATH"
+export SUDO_EDITOR=nvim
