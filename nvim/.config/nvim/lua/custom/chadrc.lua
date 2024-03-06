@@ -28,6 +28,10 @@ M.ui = {
 		enabled = true,
 	},
 
+	cmp = {
+		style = "flat_dark",
+	},
+
 	statusline = {
 		theme = "minimal",
 		separator_style = "round",
