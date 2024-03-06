@@ -85,6 +85,8 @@ eval "$(zoxide init zsh)"
 #Display Pokemon
 #pokemon-colorscripts --no-title -r 1,3,6
 eval "$(atuin init zsh)"
+eval $(thefuck --alias)
 
 export PATH="/home/rahil/.cargo/bin:$PATH"
 export SUDO_EDITOR=nvim
+export EDITOR=nvim
