@@ -12,6 +12,7 @@ local options = {
 		rust = { "rustfmt" },
 
 		sh = { "shfmt" },
+		python = { "black" },
 	},
 
 	-- adding same formatter for multiple filetypes can look too much work for some
