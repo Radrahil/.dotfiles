@@ -72,6 +72,14 @@ return {
 	),
 
 	s(
+		{ trig = "ddx" },
+		fmta("\\dv{<>}{x}", {
+			d(1, get_visual),
+		}),
+		{ condition = in_mathzone }
+	),
+
+	s(
 		{ trig = "([^%a])mm", wordTrig = false, regTrig = true },
 		fmta("<>$<>$", {
 			f(function(_, snip)
