@@ -1,4 +1,4 @@
--- local autocmd = vim.api.nvim_create_autocmd
+local autocmd = vim.api.nvim_create_autocmd
 
 -- Auto resize panes when resizing nvim window
 -- autocmd("VimResized", {
@@ -14,3 +14,10 @@ vim.opt.conceallevel = 2
 vim.g.lua_snippets_path = vim.fn.stdpath("config") .. "/lua/custom/LuaSnips"
 
 vim.g.tex_flavor = "latex"
+
+autocmd("BufEnter", {
+	pattern = "*.tex",
+	callback = function()
+		require("cmp").setup.buffer({ enabled = false })
+	end,
+})
