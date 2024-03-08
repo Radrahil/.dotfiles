@@ -17,6 +17,11 @@ local get_visual = function(args, parent)
 	end
 end
 
+local in_mathzone = function()
+	-- The `in_mathzone` function requires the VimTeX plugin
+	return vim.fn["vimtex#syntax#in_mathzone"]() == 1
+end
+
 return {
 
 	s({ trig = ";a", snippetType = "autosnippet" }, {
@@ -31,22 +36,39 @@ return {
 		t("\\gamma"),
 	}),
 
-	s(
-		{ trig = "([^%a])ff", regTrig = true, wordTrig = false, dscr = "LaTeX fraction" },
-		fmta([[\frac{<>}{<>}]], {
-			i(1, "numerator"),
-			i(2, "denominator"),
-		})
-	),
+	s({ trig = "inf" }, {
+		t("\\infty"),
+	}),
 
 	s(
-		{ trig = "([^%a])ee", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+		{ trig = "ff", snippetType = "autosnippet" },
+		fmta("\\frac{<>}{<>}", {
+			d(1, get_visual),
+			d(2, get_visual),
+		}),
+		{ condition = in_mathzone } -- `condition` option passed in the snippet `opts` table
+	),
+
+	s({ trig = "df", snippetType = "autosnippet" }, { t("\\diff ") }, { condition = in_mathzone }),
+
+	s(
+		{ trig = "ee", snippetType = "autosnippet" },
 		fmta("<>e^{<>}", {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),
 			d(1, get_visual),
-		})
+		}),
+		{ condition = in_mathzone }
+	),
+
+	s(
+		{ trig = "intt" },
+		fmta("\\int_{<>}^{<>}", {
+			d(1, get_visual),
+			d(2, get_visual),
+		}),
+		{ condition = in_mathzone }
 	),
 
 	s(
