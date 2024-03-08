@@ -1,6 +1,12 @@
 ---@type MappingsTable
 local M = {}
 
+M.disabled = {
+	n = {
+		["<Tab>"] = "",
+	},
+}
+
 M.general = {
 	n = {
 		[";"] = { ":", "enter command mode", opts = { nowait = true } },
