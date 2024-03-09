@@ -11,6 +11,7 @@ M.general = {
 	n = {
 		[";"] = { ":", "enter command mode", opts = { nowait = true } },
 		["<leader>tt"] = { "<cmd> TroubleToggle <CR>" },
+		["<leader>x"] = { ":bdelete<CR>", "close buffer" },
 	},
 }
 
