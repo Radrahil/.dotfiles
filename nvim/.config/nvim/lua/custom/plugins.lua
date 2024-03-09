@@ -237,6 +237,12 @@ local plugins = {
 			vim.g.vimtex_compiler_method = "latexmk"
 		end,
 	},
+
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	},
 	-- To make a plugin not be loaded
 	-- {
 	--   "NvChad/nvim-colorizer.lua",

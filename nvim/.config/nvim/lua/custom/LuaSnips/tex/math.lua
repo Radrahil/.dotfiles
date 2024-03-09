@@ -80,7 +80,7 @@ return {
 	),
 
 	s(
-		{ trig = "([^%a])mm", wordTrig = false, regTrig = true },
+		{ trig = "([^%a])mm", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
 		fmta("<>$<>$", {
 			f(function(_, snip)
 				return snip.captures[1]
