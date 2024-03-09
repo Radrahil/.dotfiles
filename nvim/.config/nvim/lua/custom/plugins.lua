@@ -235,6 +235,8 @@ local plugins = {
 		init = function()
 			vim.g.vimtex_view_method = "zathura"
 			vim.g.vimtex_compiler_method = "latexmk"
+			vim.g.vimtex_latexkm_options =
+				"-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode"
 		end,
 	},
 
