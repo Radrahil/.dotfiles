@@ -19,6 +19,10 @@ M.treesitter = {
 		--   "python"
 		-- },
 	},
+	highlight = {
+		enable = true,
+		disable = { "latex" },
+	},
 }
 
 M.mason = {

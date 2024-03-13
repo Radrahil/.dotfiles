@@ -1,8 +1,19 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require("configs.overrides")
 
----@type NvPluginSpec[]
-local plugins = {
+return {
+	{
+		"stevearc/conform.nvim",
+		config = function()
+			require("configs.conform")
+		end,
+	},
 
+	{
+		"nvim-tree/nvim-tree.lua",
+		opts = {
+			git = { enable = true },
+		},
+	},
 	-- Override plugin definition options
 
 	-- override plugin configs
@@ -26,15 +37,6 @@ local plugins = {
 	{
 		"nvim-tree/nvim-tree.lua",
 		opts = overrides.nvimtree,
-	},
-
-	{
-		"NvChad/nvterm",
-		opts = {
-			terminals = {
-				shell = "zsh",
-			},
-		},
 	},
 
 	{
@@ -122,15 +124,12 @@ local plugins = {
 	},
 	{
 		"mfussenegger/nvim-dap",
-		config = function(_, _)
-			require("core.utils").load_mappings("dap")
-		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			require("plugins.configs.lspconfig")
-			require("custom.configs.lspconfig")
+			require("nvchad.configs.lspconfig").defaults()
+			require("configs.lspconfig")
 		end,
 	},
 	{
@@ -142,14 +141,6 @@ local plugins = {
 				"codelldb",
 			},
 		},
-	},
-
-	{
-		"stevearc/conform.nvim",
-		config = function()
-			require("custom.configs.conform")
-		end,
-		lazy = false,
 	},
 
 	{
@@ -188,19 +179,6 @@ local plugins = {
 	},
 	--
 	{
-		"NeogitOrg/neogit",
-		dependencies = {
-			"nvim-lua/plenary.nvim", -- required
-			"sindrets/diffview.nvim", -- optional - Diff integration
-
-			-- Only one of these is needed, not both.
-			"nvim-telescope/telescope.nvim", -- optional
-		},
-		config = true,
-		lazy = false,
-	},
-
-	{
 		"junegunn/fzf.vim",
 		lazy = false,
 	},
@@ -237,6 +215,8 @@ local plugins = {
 			vim.g.vimtex_compiler_method = "latexmk"
 			vim.g.vimtex_latexkm_options =
 				"-pdf -shell-escape -verbose -file-line-error -synctex=1 -interaction=nonstopmode"
+			vim.g.vimtex_quickfix_open_on_warning = 0
+			vim.g.vimtex_fold_enable = 1
 		end,
 	},
 
@@ -244,6 +224,11 @@ local plugins = {
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
 		requires = { { "nvim-lua/plenary.nvim" } },
+	},
+
+	{
+		"tpope/vim-fugitive",
+		cmd = "Git",
 	},
 	-- To make a plugin not be loaded
 	-- {
@@ -259,5 +244,3 @@ local plugins = {
 	--   lazy = false,
 	-- }
 }
-
-return plugins

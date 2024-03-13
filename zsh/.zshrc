@@ -90,3 +90,5 @@ eval $(thefuck --alias)
 export PATH="/home/rahil/.cargo/bin:$PATH"
 export SUDO_EDITOR=nvim
 export EDITOR=nvim
+
+alias nvbk='NVIM_APPNAME="nvimbak2" nvim' 
