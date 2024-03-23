@@ -17,7 +17,7 @@ M.ui = {
 	},
 
 	tabufline = {
-		enabled = true,
+		enabled = false,
 	},
 
 	cmp = {

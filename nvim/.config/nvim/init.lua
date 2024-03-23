@@ -7,6 +7,8 @@ vim.g.tex_flavor = "latex"
 
 vim.opt.conceallevel = 2
 
+vim.o.showtabline=false
+
 vim.g.lua_snippets_path = vim.fn.stdpath("config") .. "/lua/LuaSnips"
 
 -- bootstrap lazy and all plugins
