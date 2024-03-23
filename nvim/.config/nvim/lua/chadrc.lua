@@ -17,7 +17,7 @@ M.ui = {
 	},
 
 	tabufline = {
-		enabled = false,
+		enabled = true,
 	},
 
 	cmp = {
@@ -28,6 +28,18 @@ M.ui = {
 		theme = "minimal",
 		separator_style = "round",
 		-- overriden_modules = nil,
+	},
+	term = {
+		-- hl = "Normal:term,WinSeparator:WinSeparator",
+		sizes = { sp = 0.3, vsp = 0.2 },
+		float = {
+			relative = "editor",
+			row = 0.1,
+			col = 0.1,
+			width = 0.8,
+			height = 0.7,
+			border = "single",
+		},
 	},
 }
 
