@@ -75,3 +75,13 @@ end, { silent = true, expr = true })
 map({ "s" }, "<s-tab>", function()
 	return vim.fn["luasnip#jumpable"](-1) and "<plug>luasnip-jump-prev" or "<s-tab>"
 end, { silent = true, expr = true })
+
+-- term
+map({ "n" }, "<A-l>", function()
+	require("nvchad.term").runner({
+		pos = "float",
+		cmd = "lazygit",
+		id = "Lazygit",
+		clear_cmd = false,
+	})
+end, { desc = "Toggle Lazygit" })

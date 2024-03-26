@@ -227,11 +227,12 @@ return {
 			"rcarriga/nvim-notify",
 		},
 		config = function()
-      require("configs.noice")
-    end,
+			require("configs.noice")
+		end,
 	},
 
 	{ "rebelot/kanagawa.nvim" },
+
 	-- To make a plugin not be loaded
 	-- {
 	--   "NvChad/nvim-colorizer.lua",

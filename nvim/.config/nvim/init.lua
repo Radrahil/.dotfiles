@@ -11,6 +11,11 @@ vim.o.showtabline=false
 
 vim.g.lua_snippets_path = vim.fn.stdpath("config") .. "/lua/LuaSnips"
 
+if vim.g.neovide then
+  vim.o.guifont = "JetBrainsMono Nerd Font Mono:h18"
+  vim.g.neovide_cursor_vfx_mode = "railgun"
+end
+
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
