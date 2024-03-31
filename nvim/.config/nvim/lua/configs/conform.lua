@@ -7,7 +7,7 @@ local options = {
 		javascript = { "prettier" },
 		css = { "prettier" },
 		html = { "prettier" },
-		cpp = { "clangd_format" },
+		cpp = { "clang_format" },
 		rust = { "rustfmt" },
 
 		sh = { "shfmt" },
