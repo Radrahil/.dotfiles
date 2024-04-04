@@ -152,14 +152,25 @@ return {
 	},
 
 	{
+		"vhyrro/luarocks.nvim",
+		priority = 1000, -- We'd like this plugin to load first out of the rest
+		config = true, -- This automatically runs `require("luarocks-nvim").setup()`
+	},
+
+	{
 		"nvim-neorg/neorg",
 		cmd = "Neorg",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		ft = "norg", -- lazy load on filetype
+		dependencies = { "nvim-lua/plenary.nvim", "luarocks.nvim" },
 		config = function()
 			require("neorg").setup({
 				load = {
 					["core.defaults"] = {}, -- Loads default behaviour
-					["core.concealer"] = {}, -- Adds pretty icons to your documents
+					["core.concealer"] = {
+						config = {
+							folds = false,
+						},
+					}, -- Adds pretty icons to your documents
 					["core.dirman"] = { -- Manages Neorg workspaces
 						config = {
 							workspaces = {
