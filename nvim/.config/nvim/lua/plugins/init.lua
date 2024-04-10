@@ -23,7 +23,11 @@ return {
 			ensure_installed = {
 				"clangd",
 				"clang-format",
-				"rust-analyzer",
+			},
+			setup = {
+				rust_analyzer = function()
+					return true
+				end,
 			},
 			overrides.mason,
 		},
@@ -216,11 +220,19 @@ return {
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
 		requires = { { "nvim-lua/plenary.nvim" } },
+		config = function()
+			require("configs.harpoon")
+		end,
 	},
 
 	{
 		"tpope/vim-fugitive",
 		cmd = "Git",
+	},
+
+	{
+		"mrcjkb/rustaceanvim",
+		ft = { "rust" },
 	},
 
 	{
@@ -241,6 +253,21 @@ return {
 			require("configs.noice")
 		end,
 	},
+
+	{
+		"lukas-reineke/headlines.nvim",
+		ft = "norg",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		config = true, -- or `opts = {}`
+	},
+
+	-- {
+	-- 	"Bekaboo/dropbar.nvim",
+	-- 	-- optional, but required for fuzzy finder support
+	-- 	dependencies = {
+	-- 		"nvim-telescope/telescope-fzf-native.nvim",
+	-- 	},
+	-- },
 
 	{ "rebelot/kanagawa.nvim" },
 
