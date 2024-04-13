@@ -24,11 +24,6 @@ return {
 				"clangd",
 				"clang-format",
 			},
-			setup = {
-				rust_analyzer = function()
-					return true
-				end,
-			},
 			overrides.mason,
 		},
 	},
@@ -36,6 +31,9 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = overrides.treesitter,
+		dependencies = {
+			{ "HiPhish/rainbow-delimiters.nvim" },
+		},
 	},
 
 	{
@@ -232,7 +230,15 @@ return {
 
 	{
 		"mrcjkb/rustaceanvim",
+		version = "^4",
 		ft = { "rust" },
+		config = function(_, _)
+			vim.g.rustaceanvim = {
+				server = {
+					on_attach = require("nvchad.configs.lspconfig").on_attach,
+				},
+			}
+		end,
 	},
 
 	{
@@ -259,6 +265,20 @@ return {
 		ft = "norg",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = true, -- or `opts = {}`
+	},
+
+	{
+		"NeogitOrg/neogit",
+		dependencies = {
+			"nvim-lua/plenary.nvim", -- required
+			"sindrets/diffview.nvim", -- optional - Diff integration
+
+			-- Only one of these is needed, not both.
+			"nvim-telescope/telescope.nvim", -- optional
+			"ibhagwan/fzf-lua", -- optional
+		},
+		config = true,
+    cmd = "Neogit",
 	},
 
 	-- {
