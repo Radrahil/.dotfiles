@@ -12,18 +12,44 @@ M.ui = {
 		},
 	},
 
-  hl_override = {
-    NvDashAscii = {
-      fg = "cyan",
-      bg = "none",
+	hl_override = {
+		NvDashAscii = {
+			fg = "cyan",
+			bg = "none",
+		},
+
+		NvDashButtons = {
+			fg = "white",
+			bg = "none",
+		},
+
+    TelescopeNormal = {
+      bg = "#000000",
     },
 
-    NvDashButtons = {
-      fg = "white",
-      bg = "none",
+    TelescopePromptNormal = {
+      bg = "#000000",
     },
-  },
 
+    TelescopePromptPrefix = {
+      bg = "#000000",
+    },
+
+
+    TelescopeResultsTitle = {
+      fg = "#000000",
+    },
+
+    TelescopePreviewTitle = {
+      fg = "#000000",
+    },
+
+
+	},
+
+	telescope = {
+		style = "bordered",
+	},
 
 	nvdash = {
 		load_on_startup = true,
@@ -51,7 +77,18 @@ M.ui = {
 
 	statusline = {
 		theme = "minimal",
-		separator_style = "round",
+		separator_style = "round",{
+  "NeogitOrg/neogit",
+  dependencies = {
+    "nvim-lua/plenary.nvim",         -- required
+    "sindrets/diffview.nvim",        -- optional - Diff integration
+
+    -- Only one of these is needed, not both.
+    "nvim-telescope/telescope.nvim", -- optional
+    "ibhagwan/fzf-lua",              -- optional
+  },
+  config = true
+}
 		-- overriden_modules = nil,
 	},
 	term = {

@@ -68,11 +68,18 @@ return {
 	},
 
 	{
-		"ggandor/leap.nvim",
-		lazy = false,
-		config = function()
-			require("leap").add_default_mappings()
-		end,
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		---@type Flash.Config
+		opts = {},
+  -- stylua: ignore
+  keys = {
+    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+    { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+  },
 	},
 
 	{
@@ -278,7 +285,18 @@ return {
 			"ibhagwan/fzf-lua", -- optional
 		},
 		config = true,
-    cmd = "Neogit",
+		cmd = "Neogit",
+	},
+
+	{
+		"stevearc/oil.nvim",
+		cmd = "Oil",
+		config = function()
+			require("oil").setup()
+		end,
+		opts = {},
+		-- Optional dependencies
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
 	-- {
@@ -290,6 +308,19 @@ return {
 	-- },
 
 	{ "rebelot/kanagawa.nvim" },
+
+	{
+		"NeogitOrg/neogit",
+		dependencies = {
+			"nvim-lua/plenary.nvim", -- required
+			"sindrets/diffview.nvim", -- optional - Diff integration
+
+			-- Only one of these is needed, not both.
+			"nvim-telescope/telescope.nvim", -- optional
+		},
+		config = true,
+		cmd = "Neogit",
+	},
 
 	-- To make a plugin not be loaded
 	-- {

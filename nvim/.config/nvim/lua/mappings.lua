@@ -30,18 +30,28 @@ map({ "n" }, "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "Add break
 
 map({ "n" }, "<leader>dr", "<cmd> DapContinue <CR>", { desc = "Start or continue the debugger" })
 
-map('n', '<F5>', '<cmd>DapContinue<CR>', { desc = "Continue debugging" })
-map('n', '<F6>', '<cmd>DapContinue<CR>', { desc = "Stop debugging" })
-map('n', '<F10>', '<cmd>DapStepOver<CR>', { desc = "Step over" })
-map('n', '<F11>', '<cmd>DapStepInto<CR>', { desc = "Step into" })
-map('n', '<F12>', '<cmd>DapStepOut<CR>', { desc = "Step out" })
-map('n', '<Leader>dp', '<cmd>DapLogpoint<CR>', { desc = "Set log point" })
-map('n', '<Leader>dr', '<cmd>DapReplOpen<CR>', { desc = "Open REPL" })
-map('n', '<Leader>dl', '<cmd>DapRunLast<CR>', { desc = "Debug last configuration" })
-map({ 'n', 'v' }, '<Leader>dh', '<cmd>lua require("dap.ui.widgets").hover()<CR>', { desc = "Show hover information" })
-map({ 'n', 'v' }, '<Leader>dp', '<cmd>lua require("dap.ui.widgets").preview()<CR>', { desc = "Preview information" })
-map('n', '<Leader>df', '<cmd>lua local widgets = require("dap.ui.widgets"); widgets.centered_float(widgets.frames)<CR>', { desc = "Show frames" })
-map('n', '<Leader>ds', '<cmd>lua local widgets = require("dap.ui.widgets"); widgets.centered_float(widgets.scopes)<CR>', { desc = "Show scopes" })
+map("n", "<F5>", "<cmd>DapContinue<CR>", { desc = "Continue debugging" })
+map("n", "<F6>", "<cmd>DapTerminate<CR>", { desc = "Stop debugging" })
+map("n", "<F10>", "<cmd>DapStepOver<CR>", { desc = "Step over" })
+map("n", "<F11>", "<cmd>DapStepInto<CR>", { desc = "Step into" })
+map("n", "<F12>", "<cmd>DapStepOut<CR>", { desc = "Step out" })
+map("n", "<Leader>dp", "<cmd>DapLogpoint<CR>", { desc = "Set log point" })
+map("n", "<Leader>dr", "<cmd>DapReplOpen<CR>", { desc = "Open REPL" })
+map("n", "<Leader>dl", "<cmd>DapRunLast<CR>", { desc = "Debug last configuration" })
+map({ "n", "v" }, "<Leader>dh", '<cmd>lua require("dap.ui.widgets").hover()<CR>', { desc = "Show hover information" })
+map({ "n", "v" }, "<Leader>dp", '<cmd>lua require("dap.ui.widgets").preview()<CR>', { desc = "Preview information" })
+map(
+	"n",
+	"<Leader>df",
+	'<cmd>lua local widgets = require("dap.ui.widgets"); widgets.centered_float(widgets.frames)<CR>',
+	{ desc = "Show frames" }
+)
+map(
+	"n",
+	"<Leader>ds",
+	'<cmd>lua local widgets = require("dap.ui.widgets"); widgets.centered_float(widgets.scopes)<CR>',
+	{ desc = "Show scopes" }
+)
 
 -- M.harpoon
 map({ "n" }, "<leader>a", function()
@@ -86,6 +96,14 @@ map({ "s" }, "<s-tab>", function()
 end, { silent = true, expr = true })
 
 -- noice
-map({ "n" }, "<A-c>", function()
+map({ "n" }, "<leader><leader>", function()
 	require("noice").cmd("dismiss")
-end)
+end, { desc = "Clear notifications" })
+
+-- oil
+map({ "n" }, "-", "<CMD> Oil<CR>", { desc = "Open parent directory" })
+
+-- buffers
+
+map({"n"}, "<tab>", "<cmd> bnext <CR>", {desc = "Next buffer"})
+map({"n"}, "<s-tab>", "<cmd> bprevious <CR>", {desc = "Previous buffer"})

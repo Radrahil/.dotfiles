@@ -7,6 +7,12 @@ vim.g.tex_flavor = "latex"
 
 vim.opt.conceallevel = 2
 
+vim.opt.relativenumber = true
+
+vim.o.cmdheight = 0
+
+vim.opt.termguicolors = true
+
 vim.o.showtabline=false
 
 vim.g.lua_snippets_path = vim.fn.stdpath("config") .. "/lua/LuaSnips"
