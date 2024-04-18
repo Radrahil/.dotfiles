@@ -1,3 +1,6 @@
+export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOQUIT=true
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -12,7 +15,7 @@ ZSH=/usr/share/oh-my-zsh/
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # List of plugins used
-plugins=(git sudo zsh-256color zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git sudo zsh-256color zsh-autosuggestions zsh-syntax-highlighting tmux)
 source $ZSH/oh-my-zsh.sh
 
 # In case a command is not found, try to find the package that has it

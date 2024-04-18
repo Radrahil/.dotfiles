@@ -107,3 +107,11 @@ map({ "n" }, "-", "<CMD> Oil<CR>", { desc = "Open parent directory" })
 
 map({"n"}, "<tab>", "<cmd> bnext <CR>", {desc = "Next buffer"})
 map({"n"}, "<s-tab>", "<cmd> bprevious <CR>", {desc = "Previous buffer"})
+
+-- tmux
+
+map({'n', 't'}, '<C-h>', '<CMD>NavigatorLeft<CR>')
+map({'n', 't'}, '<C-l>', '<CMD>NavigatorRight<CR>')
+map({'n', 't'}, '<C-k>', '<CMD>NavigatorUp<CR>')
+map({'n', 't'}, '<C-j>', '<CMD>NavigatorDown<CR>')
+map({'n', 't'}, '<C-p>', '<CMD>NavigatorPrevious<CR>')

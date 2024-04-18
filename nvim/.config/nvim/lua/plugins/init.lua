@@ -322,6 +322,16 @@ return {
 		cmd = "Neogit",
 	},
 
+	{
+		{
+			"numToStr/Navigator.nvim",
+			cmd = { "NavigatorLeft", "NavigatorDown", "NavigatorUp", "NavigatorRight" },
+			config = function()
+				require("Navigator").setup()
+			end,
+		},
+	},
+
 	-- To make a plugin not be loaded
 	-- {
 	--   "NvChad/nvim-colorizer.lua",
