@@ -323,12 +323,13 @@ return {
 	},
 
 	{
-		{
-			"numToStr/Navigator.nvim",
-			cmd = { "NavigatorLeft", "NavigatorDown", "NavigatorUp", "NavigatorRight" },
-			config = function()
-				require("Navigator").setup()
-			end,
+		"christoomey/vim-tmux-navigator",
+		cmd = {
+			"TmuxNavigateLeft",
+			"TmuxNavigateDown",
+			"TmuxNavigateUp",
+			"TmuxNavigateRight",
+			"TmuxNavigatePrevious",
 		},
 	},
 
