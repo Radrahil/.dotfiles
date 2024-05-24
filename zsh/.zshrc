@@ -66,6 +66,7 @@ alias pa='$aurhelper -Ss' # list availabe package
 alias pc='$aurhelper -Sc' # remove unused cache
 alias po='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
 alias vc='code --ozone-platform-hint=wayland --disable-gpu' # gui code editor
+alias v='nvim'
 
 # Handy change dir shortcuts
 alias ..='cd ..'
@@ -91,6 +92,7 @@ eval "$(atuin init zsh)"
 eval $(thefuck --alias)
 
 export PATH="/home/rahil/.cargo/bin:$PATH"
+export PATH="/home/rahil/.local/bin:$PATH"
 export SUDO_EDITOR=nvim
 export EDITOR=nvim
 

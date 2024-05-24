@@ -53,31 +53,6 @@ map(
 	{ desc = "Show scopes" }
 )
 
--- M.harpoon
-map({ "n" }, "<leader>a", function()
-	require("harpoon"):list():add()
-end, { desc = "Harpoon add file" })
-
-map({ "n" }, "<leader>1", function()
-	require("harpoon"):list():select(1)
-end, { desc = "Harpoon nav file 1" })
-
-map({ "n" }, "<leader>2", function()
-	require("harpoon"):list():select(2)
-end, { desc = "Harpoon nav file 2" })
-
-map({ "n" }, "<leader>3", function()
-	require("harpoon"):list():select(3)
-end, { desc = "Harpoon nav file 3" })
-
-map({ "n" }, "<leader>4", function()
-	require("harpoon"):list():select(4)
-end, { desc = "Harpoon nav file 4" })
-
-map({ "n" }, "<leader>5", function()
-	require("harpoon"):list():select(5)
-end, { desc = "Harpoon nav file 5" })
-
 -- luasnip
 map({ "i" }, "<tab>", function()
 	return vim.fn["luasnip#expand_or_jumpable"]() and "<plug>luasnip-expand-or-jump" or "<tab>"

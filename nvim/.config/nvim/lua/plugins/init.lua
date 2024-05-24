@@ -86,7 +86,7 @@ return {
 		"hrsh7th/nvim-cmp",
 		lazy = false,
 		config = function(_, opts)
-			-- table.insert(opts.sources, { name = "codeium" })
+			table.insert(opts.sources, { name = "neorg" })
 			require("cmp").setup(opts)
 		end,
 		dependencies = {
@@ -164,6 +164,17 @@ return {
 		"vhyrro/luarocks.nvim",
 		priority = 1000, -- We'd like this plugin to load first out of the rest
 		config = true, -- This automatically runs `require("luarocks-nvim").setup()`
+		opts = {
+			rocks = { "magick" },
+		},
+	},
+
+	{
+		"3rd/image.nvim",
+		dependencies = { "luarocks.nvim" },
+		config = function()
+			require("image").setup()
+		end,
 	},
 
 	{
@@ -187,6 +198,13 @@ return {
 							},
 						},
 					},
+					["core.integrations.image"] = {},
+					["core.latex.renderer"] = {
+						-- config = {
+						-- 	render_on_enter = false,
+						-- },
+					},
+					["core.integrations.nvim-cmp"] = {},
 				},
 			})
 		end,
@@ -222,11 +240,10 @@ return {
 	},
 
 	{
-		"ThePrimeagen/harpoon",
-		branch = "harpoon2",
-		requires = { { "nvim-lua/plenary.nvim" } },
+		"chentoast/marks.nvim",
+		lazy = false,
 		config = function()
-			require("configs.harpoon")
+			require("marks").setup({})
 		end,
 	},
 
