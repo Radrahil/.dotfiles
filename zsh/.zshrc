@@ -97,3 +97,7 @@ export SUDO_EDITOR=nvim
 export EDITOR=nvim
 
 alias nvbk='NVIM_APPNAME="nvimbak2" nvim' 
+
+if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
+  tmux attach || exec tmux new-session && exit;
+fi
