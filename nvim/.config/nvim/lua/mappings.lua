@@ -22,14 +22,10 @@ map("i", "jk", "<ESC>", { desc = "Escape insert mode" })
 -- M.general
 map({ "n" }, ";", ":", { desc = "enter command mode", nowait = true })
 
-map({ "n" }, "<leader>tt", "<cmd> TroubleToggle <CR>")
 -- map({ "n" }, "<leader>x", ":bdelete<CR>", { desc = "close buffer" })
 
 -- M.dap
 map({ "n" }, "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "Add breakpoint at line" })
-
-map({ "n" }, "<leader>dr", "<cmd> DapContinue <CR>", { desc = "Start or continue the debugger" })
-
 map("n", "<F5>", "<cmd>DapContinue<CR>", { desc = "Continue debugging" })
 map("n", "<F6>", "<cmd>DapTerminate<CR>", { desc = "Stop debugging" })
 map("n", "<F10>", "<cmd>DapStepOver<CR>", { desc = "Step over" })
