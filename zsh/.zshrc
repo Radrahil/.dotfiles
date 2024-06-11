@@ -90,5 +90,5 @@ if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
   tmux attach || exec tmux new-session && exit;
 fi
 
-eval "$(oh-my-posh init zsh --config ~/.pure.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.theme.omp.json)"
 
