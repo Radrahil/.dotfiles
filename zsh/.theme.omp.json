@@ -11,7 +11,7 @@
           "type": "os"
         },
         {
-          "background": "#242424",
+          "background": "#000000",
           "foreground": "#54266A",
           "powerline_symbol": "\ue0b0",
           "style": "powerline",
@@ -19,7 +19,7 @@
           "type": "session"
         },
         {
-          "background": "#242424",
+          "background": "#000000",
           "foreground": "#3446AA",
           "powerline_symbol": "\ue0b0",
           "style": "powerline",
@@ -27,8 +27,8 @@
           "type": "root"
         },
         {
-          "background": "#242424",
-          "foreground": "#FFBB00",
+          "background": "#000000",
+          "foreground": "#DDDDDD",
           "powerline_symbol": "\ue0b0",
           "properties": {
             "time_format": "2006-01-02 15:04:05"
@@ -38,7 +38,7 @@
           "type": "time"
         },
         {
-          "background": "#242424",
+          "background": "#000000",
           "foreground": "#522E95",
           "powerline_symbol": "\ue0b0",
           "properties": {
@@ -50,7 +50,7 @@
           "type": "path"
         },
         {
-          "background": "#242424",
+          "background": "#000000",
           "foreground": "#3A86FF",
           "powerline_symbol": "\ue0b0",
           "properties": {
@@ -65,7 +65,7 @@
           "type": "executiontime",
           "style": "powerline",
           "powerline_symbol": "",
-          "foreground": "#dedede",
+          "foreground": "#fefefe",
           "background": "#5850Ad",
           "template": " <#fefefe></> {{ .FormattedMs }} ",
           "properties": {
@@ -108,7 +108,7 @@
   "transient_prompt": {
     "background": "transparent",
     "foreground": "#7a7a7a",
-    "template": " \u276f "
+    "template": " \u279c "
   },
 
   "version": 2

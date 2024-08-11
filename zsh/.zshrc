@@ -57,6 +57,7 @@ alias pc='$aurhelper -Sc' # remove unused cache
 alias po='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
 alias vc='code --ozone-platform-hint=wayland --disable-gpu' # gui code editor
 alias v='nvim'
+alias fetch='neofetch | lolcat'
 
 # Handy change dir shortcuts
 alias ..='cd ..'
@@ -76,7 +77,6 @@ eval "$(zoxide init zsh)"
 
 #Display Pokemon
 #pokemon-colorscripts --no-title -r 1,3,6
-eval "$(atuin init zsh)"
 eval $(thefuck --alias)
 
 export PATH="/home/rahil/.cargo/bin:$PATH"
@@ -92,3 +92,4 @@ fi
 
 eval "$(oh-my-posh init zsh --config ~/.theme.omp.json)"
 
+eval "$(atuin init zsh)"

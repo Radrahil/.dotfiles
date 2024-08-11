@@ -86,3 +86,12 @@ map({ "n", "t" }, "<C-l>", "<CMD>TmuxNavigateRight<CR>")
 map({ "n", "t" }, "<C-k>", "<CMD>TmuxNavigateUp<CR>")
 map({ "n", "t" }, "<C-j>", "<CMD>TmuxNavigateDown<CR>")
 map({ "n", "t" }, "<C-p>", "<CMD>TmuxNavigatePrevious<CR>")
+
+-- Precognition
+map({ "n" }, "<leader>pr", function()
+	require("precognition").toggle()
+end, { desc = "toggle precognition", silent = true })
+
+map({ "n" }, "<leader>pp", function()
+	require("precognition").peek()
+end, { desc = "peek precognition", silent = true })
