@@ -1,5 +1,17 @@
 local M = {}
 
+M.term = {
+  -- hl = "Normal:term,WinSeparator:WinSeparator",
+  float = {
+    relative = "editor",
+    row = 0,
+    col = 0,
+    width = 1,
+    height = 1,
+    border = "single",
+  },
+}
+
 M.ui = {
 	theme = "yoru",
 	theme_toggle = { "yoru", "one_light" },
@@ -90,18 +102,6 @@ M.ui = {
   config = true
 }
 		-- overriden_modules = nil,
-	},
-	term = {
-		-- hl = "Normal:term,WinSeparator:WinSeparator",
-		sizes = { sp = 0.3, vsp = 0.2 },
-		float = {
-			relative = "editor",
-			row = 0.1,
-			col = 0.1,
-			width = 0.8,
-			height = 0.7,
-			border = "single",
-		},
 	},
 }
 

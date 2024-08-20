@@ -62,12 +62,6 @@ return {
 	},
 
 	{
-		"ellisonleao/glow.nvim",
-		config = true,
-		cmd = "Glow",
-	},
-
-	{
 		"folke/flash.nvim",
 		event = "VeryLazy",
 		---@type Flash.Config
@@ -225,6 +219,7 @@ return {
 							workspaces = {
 								notes = "~/notes",
 							},
+							default_workspace = "notes",
 						},
 					},
 					["core.integrations.image"] = {},
@@ -408,9 +403,53 @@ return {
 	{
 		"tris203/precognition.nvim",
 		cmd = "Precognition",
-    config = {},
+		config = {},
 	},
 
+	{
+		"famiu/bufdelete.nvim",
+	},
+
+	{
+		"OXY2DEV/helpview.nvim",
+		lazy = false, -- Recommended
+
+		-- In case you still want to lazy load
+		-- ft = "help",
+
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+		},
+	},
+
+	{
+		"OXY2DEV/markview.nvim",
+		lazy = false, -- Recommended
+		-- ft = "markdown" -- If you decide to lazy-load anyway
+		config = function()
+			require("markview").setup({
+				modes = { "n", "i", "no", "c" },
+				hybrid_modes = { "i" },
+
+				-- This is nice to have
+				callbacks = {
+					on_enable = function(_, win)
+						vim.wo[win].conceallevel = 2
+						vim.wo[win].concealcursor = "nc"
+					end,
+				},
+			})
+		end,
+
+		dependencies = {
+			-- You will not need this if you installed the
+			-- parsers manually
+			-- Or if the parsers are in your $RUNTIMEPATH
+			"nvim-treesitter/nvim-treesitter",
+
+			"nvim-tree/nvim-web-devicons",
+		},
+	},
 	-- To make a plugin not be loaded
 	-- {
 	--   "NvChad/nvim-colorizer.lua",

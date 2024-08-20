@@ -1,6 +1,6 @@
-export ZSH_TMUX_AUTOSTART=true
-export ZSH_TMUX_AUTOQUIT=true
-
+# export ZSH_TMUX_AUTOSTART=true
+# export ZSH_TMUX_AUTOQUIT=true
+#
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 

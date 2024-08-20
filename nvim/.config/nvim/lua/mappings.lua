@@ -95,3 +95,16 @@ end, { desc = "toggle precognition", silent = true })
 map({ "n" }, "<leader>pp", function()
 	require("precognition").peek()
 end, { desc = "peek precognition", silent = true })
+
+-- Bdelete
+
+map("n", "<leader>x", function()
+	require("bufdelete").bufdelete(0, true)
+end, { desc = "Close Buffer" })
+
+vim.api.nvim_create_autocmd("Filetype", {
+    pattern = "norg",
+    callback = function()
+        map("n", "<CR>", "<Plug>(neorg.esupports.hop.hop-link)", { buffer = true })
+    end,
+})
