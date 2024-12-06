@@ -1,13 +1,17 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "transient_prompt": {
+    "template": "➜",
+    "foreground": "#7a7a7a",
+    "background": "transparent"
+  },
+  "console_title_template": "{{if .Root}}root :: {{end}}{{.Shell}} :: {{.Folder}}",
   "blocks": [
     {
+      "type": "prompt",
       "alignment": "left",
       "segments": [
         {
-          "background": "#000000",
-          "foreground": "#26C6DA",
-          "leading_diamond": "\ue0c7\u2593",
           "properties": {
             "alpine": "\uf300",
             "arch": "\uf303",
@@ -25,161 +29,157 @@
             "ubuntu": "\uf31c",
             "windows": "\ue70f"
           },
-          "style": "diamond",
+          "leading_diamond": "\ue0c7\u2593",
           "template": " {{ if .WSL }}\ue712 on {{ end }}{{ .Icon }}<#7a7a7a> \ue0b1</>",
-          "type": "os"
+          "foreground": "#26C6DA",
+          "background": "#000000",
+          "type": "os",
+          "style": "diamond"
         },
         {
-          "background": "#000000",
-          "foreground": "#fafafa",
-          "style": "diamond",
           "template": " {{ if ne .Env.POSH_SESSION_DEFAULT_USER .UserName }}<#77f5d6>{{ .UserName }}</><#7a7a7a>\uf1fa</>{{ end }}<#2EEFBF>{{ .HostName }}</><#7a7a7a> \ue0b1</>",
-          "type": "session"
-        },
-        {
-          "background": "#000000",
-          "foreground": "#ffff66",
-          "style": "diamond",
-          "template": " \uf0e7<#7a7a7a> \ue0b1</>",
-          "type": "root"
-        },
-        {
-          "background": "#000000",
           "foreground": "#fafafa",
+          "background": "#000000",
+          "type": "session",
+          "style": "diamond"
+        },
+        {
+          "template": " \uf0e7<#7a7a7a> \ue0b1</>",
+          "foreground": "#ffff66",
+          "background": "#000000",
+          "type": "root",
+          "style": "diamond"
+        },
+        {
           "properties": {
             "folder_icon": "<#B5B2C2>\ue5fe </>",
             "style": "full"
           },
-          "style": "diamond",
           "template": "<#f2f200> \ue5ff </>{{ .Path }} ",
-          "type": "path"
+          "foreground": "#fafafa",
+          "background": "#000000",
+          "type": "path",
+          "style": "diamond"
         },
         {
-          "background": "#000000",
-          "foreground": "#ffeb3b",
-          "foreground_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffeb3b{{ end }}",
-            "{{ if gt .Ahead 0 }}#2EC4B6{{ end }}",
-            "{{ if gt .Behind 0 }}#8A4FFF{{ end }}"
-          ],
           "properties": {
             "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true
           },
-          "style": "diamond",
           "template": "<#7a7a7a>\ue0b1 </>{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}<#E84855> \uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#2FDA4E> \uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
-          "type": "git"
+          "foreground": "#ffeb3b",
+          "background": "#000000",
+          "type": "git",
+          "style": "diamond",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffeb3b{{ end }}",
+            "{{ if gt .Ahead 0 }}#2EC4B6{{ end }}",
+            "{{ if gt .Behind 0 }}#8A4FFF{{ end }}"
+          ]
         },
         {
-          "background": "#000000",
-          "foreground": "#fafafa",
-          "style": "diamond",
           "trailing_diamond": "\ue0b0",
-          "type": "text"
+          "foreground": "#fafafa",
+          "background": "#000000",
+          "type": "text",
+          "style": "diamond"
         }
-      ],
-      "type": "prompt"
+      ]
     },
     {
+      "type": "prompt",
       "alignment": "right",
       "segments": [
         {
-          "background": "#000000",
-          "foreground": "#fafafa",
           "leading_diamond": "\ue0b2",
-          "style": "diamond",
-          "type": "text"
-        },
-        {
-          "background": "#000000",
-          "foreground": "#6CA35E",
-          "style": "diamond",
-          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}<#7a7a7a> \ue0b3</>",
-          "type": "node"
-        },
-        {
-          "background": "#000000",
-          "foreground": "#96E072",
-          "style": "diamond",
-          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}<#7a7a7a> \ue0b3</>",
-          "type": "python"
-        },
-        {
-          "background": "#000000",
-          "foreground": "#3891A6",
-          "style": "diamond",
-          "template": " \ue77f {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }}<#7a7a7a> \ue0b3</>",
-          "type": "dotnet"
-        },
-        {
-          "background": "#000000",
           "foreground": "#fafafa",
+          "background": "#000000",
+          "type": "text",
+          "style": "diamond"
+        },
+        {
+          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}<#7a7a7a> \ue0b3</>",
+          "foreground": "#6CA35E",
+          "background": "#000000",
+          "type": "node",
+          "style": "diamond"
+        },
+        {
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}<#7a7a7a> \ue0b3</>",
+          "foreground": "#96E072",
+          "background": "#000000",
+          "type": "python",
+          "style": "diamond"
+        },
+        {
+          "template": " \ue77f {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }}<#7a7a7a> \ue0b3</>",
+          "foreground": "#3891A6",
+          "background": "#000000",
+          "type": "dotnet",
+          "style": "diamond"
+        },
+        {
           "properties": {
             "time_format": "15:04:05"
           },
-          "style": "diamond",
-          "template": " {{ .CurrentDate | date .Format }}<#007ACC> \ue641 </>",
           "trailing_diamond": "\u2593\ue0c6",
-          "type": "time"
+          "template": " {{ .CurrentDate | date .Format }}<#007ACC> \ue641 </>",
+          "foreground": "#fafafa",
+          "background": "#000000",
+          "type": "time",
+          "style": "diamond"
         }
-      ],
-      "type": "prompt"
+      ]
     },
     {
+      "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
+          "template": "➜",
           "foreground": "#7a7a7a",
-          "style": "plain",
-          "template": "\u279c",
-          "type": "text"
+          "type": "text",
+          "style": "plain"
         }
       ],
-      "type": "prompt"
+      "newline": true
     },
     {
+      "type": "rprompt",
       "alignment": "right",
       "segments": [
         {
+          "template": " ❮ ",
           "foreground": "#7a7a7a",
-          "style": "plain",
-          "template": " \u276e ",
-          "type": "text"
+          "type": "text",
+          "style": "plain"
         },
         {
-          "foreground": "#FFCE5C",
           "properties": {
             "style": "roundrock",
             "threshold": 500
           },
-          "style": "plain",
           "template": " {{ .FormattedMs }}<#fafafa> \uf252 </>",
-          "type": "executiontime"
+          "foreground": "#FFCE5C",
+          "type": "executiontime",
+          "style": "plain"
         },
         {
-          "foreground": "#9FD356",
-          "foreground_templates": [
-            "{{ if gt .Code 0 }}#E84855{{ end }}"
-          ],
           "properties": {
             "always_enabled": true
           },
-          "style": "plain",
           "template": " \uea9f {{ if gt .Code 0 }}{{ .Code }}{{ end }} ",
-          "type": "status"
+          "foreground": "#9FD356",
+          "type": "status",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#E84855{{ end }}"
+          ]
         }
-      ],
-      "type": "rprompt"
+      ]
     }
   ],
-  "console_title_template": "{{if .Root}}root :: {{end}}{{.Shell}} :: {{.Folder}}",
-  "final_space": true,
-  "transient_prompt": {
-    "background": "transparent",
-    "foreground": "#7a7a7a",
-    "template": " ~#@\u276f "
-  },
-  "version": 2
+  "version": 3,
+  "final_space": true
 }

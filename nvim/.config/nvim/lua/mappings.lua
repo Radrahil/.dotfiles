@@ -99,8 +99,12 @@ end, { desc = "peek precognition", silent = true })
 -- Bdelete
 
 map("n", "<leader>x", function()
-	require("bufdelete").bufdelete(0, true)
+require("bufdelete").bufdelete(0, true)
 end, { desc = "Close Buffer" })
+
+map("n", "<C-t>", function()
+  require("menu").open("default")
+end, {})
 
 vim.api.nvim_create_autocmd("Filetype", {
     pattern = "norg",

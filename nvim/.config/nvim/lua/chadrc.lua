@@ -12,7 +12,52 @@ M.term = {
   },
 }
 
+
+	M.nvdash = {
+		load_on_startup = true,
+		header = {
+			"                                                                       ",
+			"                                                                     ",
+			"       ████ ██████           █████      ██                     ",
+			"      ███████████             █████                             ",
+			"      █████████ ███████████████████ ███   ███████████   ",
+			"     █████████  ███    █████████████ █████ ██████████████   ",
+			"    █████████ ██████████ █████████ █████ █████ ████ █████   ",
+			"  ███████████ ███    ███ █████████ █████ █████ ████ █████  ",
+			" ██████  █████████████████████ ████ █████ █████ ████ ██████ ",
+			"                                                                       ",
+		},
+	}
+
 M.ui = {
+	tabufline = {
+		enabled = false,
+	},
+
+	cmp = {
+		style = "flat_dark",
+	},
+
+	statusline = {
+		theme = "minimal",
+		separator_style = "round",{
+  "NeogitOrg/neogit",
+  dependencies = {
+    "nvim-lua/plenary.nvim",         -- required
+    "sindrets/diffview.nvim",        -- optional - Diff integration
+
+    -- Only one of these is needed, not both.
+    "nvim-telescope/telescope.nvim", -- optional
+    "ibhagwan/fzf-lua",              -- optional
+  },
+  config = true
+}
+		-- overriden_modules = nil,
+	},
+}
+
+M.base46 = {
+
 	theme = "yoru",
 	theme_toggle = { "yoru", "one_light" },
 
@@ -63,46 +108,7 @@ M.ui = {
 		style = "bordered",
 	},
 
-	nvdash = {
-		load_on_startup = true,
-		header = {
-			"                                                                       ",
-			"                                                                     ",
-			"       ████ ██████           █████      ██                     ",
-			"      ███████████             █████                             ",
-			"      █████████ ███████████████████ ███   ███████████   ",
-			"     █████████  ███    █████████████ █████ ██████████████   ",
-			"    █████████ ██████████ █████████ █████ █████ ████ █████   ",
-			"  ███████████ ███    ███ █████████ █████ █████ ████ █████  ",
-			" ██████  █████████████████████ ████ █████ █████ ████ ██████ ",
-			"                                                                       ",
-		},
-	},
 
-	tabufline = {
-		enabled = false,
-	},
-
-	cmp = {
-		style = "flat_dark",
-	},
-
-	statusline = {
-		theme = "minimal",
-		separator_style = "round",{
-  "NeogitOrg/neogit",
-  dependencies = {
-    "nvim-lua/plenary.nvim",         -- required
-    "sindrets/diffview.nvim",        -- optional - Diff integration
-
-    -- Only one of these is needed, not both.
-    "nvim-telescope/telescope.nvim", -- optional
-    "ibhagwan/fzf-lua",              -- optional
-  },
-  config = true
-}
-		-- overriden_modules = nil,
-	},
 }
 
 return M
