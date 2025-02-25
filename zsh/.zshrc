@@ -57,7 +57,8 @@ alias pc='$aurhelper -Sc' # remove unused cache
 alias po='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
 alias vc='code --ozone-platform-hint=wayland --disable-gpu' # gui code editor
 alias v='nvim'
-alias fetch='neofetch | lolcat'
+alias mp="ncmpcpp"
+alias fetch='fastfetch| lolcat'
 
 # Handy change dir shortcuts
 alias ..='cd ..'
@@ -91,5 +92,5 @@ if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
 fi
 
 eval "$(oh-my-posh init zsh --config ~/.theme.omp.json)"
-
 eval "$(atuin init zsh)"
+eval "$(tv init zsh)"
