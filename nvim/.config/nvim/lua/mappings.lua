@@ -71,9 +71,6 @@ map({ "n" }, "<leader><leader>", function()
 	require("noice").cmd("dismiss")
 end, { desc = "Clear notifications" })
 
--- oil
-map({ "n" }, "-", "<CMD> Oil<CR>", { desc = "Open parent directory" })
-
 -- buffers
 
 map({ "n" }, "<tab>", "<cmd> bnext <CR>", { desc = "Next buffer" })

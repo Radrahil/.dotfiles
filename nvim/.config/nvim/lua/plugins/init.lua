@@ -329,17 +329,6 @@ return {
 		cmd = "Neogit",
 	},
 
-	{
-		"stevearc/oil.nvim",
-		cmd = "Oil",
-		config = function()
-			require("oil").setup()
-		end,
-		opts = {},
-		-- Optional dependencies
-		-- dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
-
 	-- {
 	-- 	"Bekaboo/dropbar.nvim",
 	-- 	-- optional, but required for fuzzy finder support
@@ -420,6 +409,40 @@ return {
 	{
 		"OXY2DEV/markview.nvim",
 		lazy = false,
+	},
+	---@type LazySpec
+	{
+		"mikavilpas/yazi.nvim",
+		event = "VeryLazy",
+		dependencies = { "folke/snacks.nvim", lazy = true },
+		keys = {
+			-- 👇 in this section, choose your own keymappings!
+			{
+				"<leader>-",
+				mode = { "n", "v" },
+				"<cmd>Yazi<cr>",
+				desc = "Open yazi at the current file",
+			},
+			{
+				-- Open in the current working directory
+				"<leader>cw",
+				"<cmd>Yazi cwd<cr>",
+				desc = "Open the file manager in nvim's working directory",
+			},
+			{
+				"<c-up>",
+				"<cmd>Yazi toggle<cr>",
+				desc = "Resume the last yazi session",
+			},
+		},
+		---@type YaziConfig | {}
+		opts = {
+			-- if you want to open yazi instead of netrw, see below for more info
+			open_for_directories = false,
+			keymaps = {
+				show_help = "<f1>",
+			},
+		},
 	},
 	-- To make a plugin not be loaded
 	-- {

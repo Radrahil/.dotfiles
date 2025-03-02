@@ -61,14 +61,6 @@ M.base46 = {
 	theme = "yoru",
 	theme_toggle = { "yoru", "one_light" },
 
-	changed_themes = {
-		yoru = {
-			base_16 = {
-				base00 = "#000000",
-			},
-		},
-	},
-
 	hl_override = {
 		NvDashAscii = {
 			fg = "cyan",
