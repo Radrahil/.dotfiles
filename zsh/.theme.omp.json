@@ -6,7 +6,7 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#ffbebc",
+          "foreground": "#503afe",
           "leading_diamond": "<#db0139>󰁎 </>",
           "properties": {
             "display_host": true
@@ -25,7 +25,7 @@
           "type": "time"
         },
         {
-          "foreground": "#ee79d1",
+          "foreground": "#2e1ee2",
           "properties": {
             "branch_icon": "\ue725 ",
             "fetch_stash_count": true,
@@ -45,17 +45,17 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#ffafd2",
-          "leading_diamond": "<#00c7fc>󰁕 </><#ffafd2>{</>",
+          "foreground": "#5900bf",
+          "leading_diamond": "<#00c7fc>󰁕 </><#5900bf>>{</>",
           "properties": {
             "folder_icon": "\uf07b",
-            "folder_separator_icon": "\uebcb",
+            "folder_separator_icon": "",
             "home_icon": "home",
             "style": "agnoster_full"
           },
           "style": "diamond",
           "template": "  {{ .Path }} ",
-          "trailing_diamond": "<#ffafd2>}</>",
+          "trailing_diamond": "<#5900bf>}</>",
           "type": "path"
         }
       ],
