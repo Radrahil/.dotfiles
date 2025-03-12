@@ -98,6 +98,7 @@
     },
     {
       "alignment": "left",
+      "newline": true,
       "segments": [
         {
           "foreground": "#A9FFB4",
@@ -106,7 +107,7 @@
             "always_enabled": true
           },
           "style": "plain",
-          "template": " ",
+          "template": " ",
           "type": "status"
         }
       ],
