@@ -65,6 +65,16 @@
       "alignment": "right",
       "segments": [
         {
+          "foreground": "#FFA500",
+          "properties": {
+            "display_mode": "context",
+            "prefix": " "
+          },
+          "style": "diamond",
+          "template": " {{ .Venv }} ",
+          "type": "python"
+        },
+        {
           "foreground": "#a9ffb4",
           "style": "plain",
           "type": "text"
