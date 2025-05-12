@@ -29,13 +29,13 @@ return {
 		},
 	},
 
-	{
-		"nvim-treesitter/nvim-treesitter",
-		opts = overrides.treesitter,
-		dependencies = {
-			{ "HiPhish/rainbow-delimiters.nvim" },
-		},
-	},
+	-- {
+	-- 	"nvim-treesitter/nvim-treesitter",
+	-- 	opts = overrides.treesitter,
+	-- 	dependencies = {
+	-- 		{ "HiPhish/rainbow-delimiters.nvim" },
+	-- 	},
+	-- },
 
 	{
 		"nvim-tree/nvim-tree.lua",
@@ -75,25 +75,6 @@ return {
     { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
     { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
   },
-	},
-
-	{
-		"hrsh7th/nvim-cmp",
-		lazy = false,
-		config = function(_, opts)
-			table.insert(opts.sources, { name = "neorg" })
-			require("cmp").setup(opts)
-		end,
-		dependencies = {
-			"f3fora/cmp-spell",
-			-- {
-			-- 	"jcdickinson/codeium.nvim",
-			-- 	config = function()
-			-- 		require("codeium").setup({})
-			-- 	end,
-			-- },
-		},
-		opts = overrides.cmp,
 	},
 
 	{
@@ -185,23 +166,6 @@ return {
 	},
 
 	{
-		"vhyrro/luarocks.nvim",
-		priority = 1000, -- We'd like this plugin to load first out of the rest
-		config = true, -- This automatically runs `require("luarocks-nvim").setup()`
-		opts = {
-			rocks = { "magick" },
-		},
-	},
-
-	{
-		"3rd/image.nvim",
-		dependencies = { "luarocks.nvim" },
-		config = function()
-			require("image").setup()
-		end,
-	},
-
-	{
 		"nvim-neorg/neorg",
 		cmd = "Neorg",
 		ft = "norg", -- lazy load on filetype
@@ -279,7 +243,6 @@ return {
 
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^4",
 		ft = { "rust" },
 		config = function(_, _)
 			vim.g.rustaceanvim = {
@@ -290,24 +253,24 @@ return {
 		end,
 	},
 
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {
-			-- add any options here
-		},
-		dependencies = {
-			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-			"MunifTanjim/nui.nvim",
-			-- OPTIONAL:
-			--   `nvim-notify` is only needed, if you want to use the notification view.
-			--   If not available, we use `mini` as the fallback
-			"rcarriga/nvim-notify",
-		},
-		config = function()
-			require("configs.noice")
-		end,
-	},
+	-- {
+	-- 	"folke/noice.nvim",
+	-- 	event = "VeryLazy",
+	-- 	opts = {
+	-- 		-- add any options here
+	-- 	},
+	-- 	dependencies = {
+	-- 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		-- OPTIONAL:
+	-- 		--   `nvim-notify` is only needed, if you want to use the notification view.
+	-- 		--   If not available, we use `mini` as the fallback
+	-- 		"rcarriga/nvim-notify",
+	-- 	},
+	-- 	config = function()
+	-- 		require("configs.noice")
+	-- 	end,
+	-- },
 
 	{
 		"lukas-reineke/headlines.nvim",
@@ -445,6 +408,20 @@ return {
 			},
 		},
 	},
+  {
+    "ficcdaf/ashen.nvim",
+    -- optional but recommended,
+    -- pin to the latest stable release:
+    lazy = false,
+    priority = 1000,
+    -- configuration is optional!
+    opts = {
+      -- your settings here
+    },
+  },
+
+  { import = "nvchad.blink.lazyspec" },
+
 	-- To make a plugin not be loaded
 	-- {
 	--   "NvChad/nvim-colorizer.lua",
